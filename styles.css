@@ -1,0 +1,186 @@
+/* Reset CSS */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 150px; /* Adjust size as needed */
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle input {
+    display: none;
+}
+
+.menu-toggle label {
+    display: block;
+    cursor: pointer;
+}
+
+.menu-toggle label span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.menu-toggle ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu-toggle ul li {
+    margin-bottom: 20px;
+}
+
+.menu-toggle ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.menu-toggle ul li a:hover {
+    color: #ffd700;
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#hero .btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #ffd700;
+    color: #343a40;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#hero .btn:hover {
+    background-color: #f2cd32;
+}
+
+/* About Section */
+#about {
+    background-color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle input {
+        display: none;
+    }
+
+    .menu-toggle label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle label span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin-bottom: 5px;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .menu-toggle ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #343a40;
+        padding: 20px;
+    }
+
+    .menu-toggle ul.active {
+        display: block;
+    }
+
+    .menu-toggle span {
+        display: block;
+    }
+
+    .menu-toggle input:checked ~ label span:nth-child(2) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle input:checked ~ label span:nth-child(3) {
+        opacity: 0;
+    }
+
+    .menu-toggle input:checked ~ label span:nth-child(4) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
