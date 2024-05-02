@@ -1,38 +1,69 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="output.css" rel="stylesheet">
+  <title>Hotel Ariana and Restaurant</title>
+  <link rel="icon" href="/images/logo.ico" type="icon">
+  <!-- Add Tailwind CSS -->
+  <link href="/dist/output.css" rel="stylesheet">
+  <!-- Add Font Awesome for the hamburger icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-    <nav class="bg-gray-800 p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div>
-                <a href="#" class="text-white font-bold text-lg">Logo</a>
-            </div>
-            <div>
-                <ul class="flex space-x-4">
-                    <li>
-                        <a href="#" class="text-white hover:text-gray-400 transition duration-300">Home</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-white hover:text-gray-400 transition duration-300">About</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-white hover:text-gray-400 transition duration-300">Services</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-white hover:text-gray-400 transition duration-300">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    
+<body class="bg-gray-100">
+  <div class="header bg-orange-100 p-4 flex justify-between items-center">
+    <div class="flex items-center"> <!-- Container for logo -->
+      <a href="#" class="text-white font-bold text-lg mr-4">
+        <img src="/images/logo.png" alt="Logo" class="h-8">
+      </a>
+    </div>
+    <div class="flex items-center"> <!-- Container for navigation and hamburger menu -->
+      <div id="sidebar" class="sidebar bg-orange-100 p-4 fixed inset-y-0 right-0 z-50 transform translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+        <button id="toggleMenu" class="text-black hover:text-gray-400 focus:outline-none md:hidden">
+          <i class="fas fa-times"></i> <!-- Font Awesome icon for the close button -->
+        </button>
+        <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+          <li>
+            <a href="#" class="text-black hover:text-gray-400 transition duration-300">About</a>
+          </li>
+          <li>
+            <a href="#" class="text-black hover:text-gray-400 transition duration-300">Services</a>
+          </li>
+          <li>
+            <a href="#" class="text-black hover:text-gray-400 transition duration-300">Career</a>
+          </li>
+          <li>
+            <a href="#" class="text-black hover:text-gray-400 transition duration-300">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <button id="openMenu" class="text-black hover:text-gray-400 focus:outline-none md:hidden">
+        <i class="fas fa-bars"></i> <!-- Font Awesome icon for the hamburger menu -->
+      </button>
+    </div>
+  </div>
+
+  <main class="p-4">
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <!-- Content goes here -->
+  </main>
+
+  <!-- Include JavaScript to toggle sidebar -->
+  <script>
+    document.getElementById('openMenu').addEventListener('click', function() {
+      const sidebar = document.getElementById('sidebar');
+      const openButtonIcon = document.getElementById('openMenu').querySelector('i');
+      sidebar.classList.remove('translate-x-full'); // Ensure sidebar is visible
+      openButtonIcon.classList.add('hidden'); // Hide the open menu button
+    });
+
+    document.getElementById('toggleMenu').addEventListener('click', function() {
+      const sidebar = document.getElementById('sidebar');
+      const openButtonIcon = document.getElementById('openMenu').querySelector('i');
+      sidebar.classList.add('translate-x-full'); // Hide the sidebar
+      openButtonIcon.classList.remove('hidden'); // Show the open menu button
+    });
+  </script>
 </body>
 </html>
