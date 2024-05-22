@@ -48,7 +48,23 @@
   </div>
 
   <main class="p-4">
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <section class="py-12">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          <img src="/images/Ariana Logo.jpg" class="h-20 mx-auto object-contain"> <!-- Set the height and maintain aspect ratio -->
+      Treat yourself to an Exceptional Hotel Experience and complete your Gateaway Fantasies
+        </h2>
+          <div class="relative overflow-hidden w-full h-[600px]">
+              <div class="flex transition-transform duration-500 ease-in-out" id="slider">
+                <img src="/images/ariana building.jpg" alt="Hotel Image 1" class="min-w-full h-[600px] object-cover">
+                <img src="/images/ariana building.jpg" alt="Hotel Image 2" class="min-w-full h-[600px] object-cover">
+                <img src="/images/ariana building.jpg" alt="Hotel Image 3" class="min-w-full h-[600px] object-cover">
+              </div>
+              <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2" id="prev">‹</button>
+              <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2" id="next">›</button>
+          </div>
+      </div>
+  </section>
   
     
     <!-- About us goes here -->
@@ -108,50 +124,43 @@
           </div>
       </div>
   </div>
-  
-   <!-- Contact Us Section -->
-   <section class="bg-white py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Contact Us Header -->
-        <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Contact Us</h2>
-        <div class="flex flex-col md:flex-row justify-between items-center">
-            <!-- Logo -->
-            <div class="flex-shrink-0 mb-4 md:mb-0">
-                <img src="/images/Ariana Logo.jpg" alt="Hotel Logo" class="h-16">
-            </div>
+      <!-- Contact Us Section -->
+      <section class="bg-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Contact Us Header -->
+            <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Contact Us</h2>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <!-- Logo and Quick Links -->
+                <div class="flex flex-col items-center mb-4 md:mb-0 md:w-1/2">
+                    <img src="/images/Ariana Logo.jpg" alt="Hotel Logo" class="h-28 mb-4">
+                    <div class="flex space-x-4">
+                        <a href="https://www.agoda.com" target="_blank">
+                            <img src="" alt="Agoda" class="h-8">
+                        </a>
+                        <a href="https://www.expedia.com" target="_blank">
+                            <img src="" alt="Expedia" class="h-8">
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="" alt="Facebook" class="h-8">
+                        </a>
+                    </div>
+                </div>
 
-            <!-- Quick Links -->
-            <div class="flex space-x-4 mb-4 md:mb-0">
-                <a href="https://www.agoda.com" target="_blank">
-                    <img src="https://cdn.iconscout.com/icon/free/png-256/agoda-282739.png" alt="Agoda" class="h-8">
-                </a>
-                <a href="https://www.expedia.com" target="_blank">
-                    <img src="https://cdn.iconscout.com/icon/free/png-256/expedia-193727.png" alt="Expedia" class="h-8">
-                </a>
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="https://cdn.iconscout.com/icon/free/png-256/facebook-226594.png" alt="Facebook" class="h-8">
-                </a>
-            </div>
-
-            <!-- Contact Information -->
-            <div class="text-center md:text-right">
-                <p class="text-gray-800">
-                    <strong>Address:</strong> 123 Hotel Street, City, Country
-                </p>
-                <p class="text-gray-800">
-                    <strong>Phone:</strong> +123 456 7890
-                </p>
-                <p class="text-gray-800">
-                    <strong>Email:</strong> contact@hotel.com
-                </p>
+                <!-- Contact Information -->
+                <div class="md:w-1/2 text-center md:text-right">
+                    <p class="text-gray-800">
+                        <strong>Address:</strong> Paringao, Bauang, La Union.
+                    </p>
+                    <p class="text-gray-800">
+                        <strong>Telephone:</strong> (072) 705-0050 / 705-0080;
+                    </p>
+                    <p class="text-gray-800">
+                        <strong>Email:</strong> hotelariana.marketing@gmail.com
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-  
-  
-  
-    
+    </section>  
     <!-- Content goes here -->
   </main>
 
@@ -192,6 +201,36 @@
     sidebar.classList.add('translate-x-full'); // Hide the sidebar
     openButtonIcon.classList.remove('hidden'); // Show the open menu button
   });
+
+  const slider = document.getElementById('slider');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+        const totalSlides = slider.children.length;
+
+        function showSlide(index) {
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 100;
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+
+        prevButton.addEventListener('click', () => showSlide(currentIndex - 1));
+        nextButton.addEventListener('click', () => showSlide(currentIndex + 1));
+
+        // Auto slide every 2 seconds
+        setInterval(nextSlide, 4000);
+
+        showSlide(currentIndex);
 
   </script>
 </body>
