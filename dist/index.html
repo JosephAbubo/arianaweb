@@ -124,6 +124,47 @@
           </div>
       </div>
   </div>
+
+
+  <section class="py-12">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Our Rooms</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Room 1 -->
+        <div class="relative h-64 bg-cover bg-center rounded-lg shadow-md" style="background-image: url('/images/1.jpg');">
+          <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+          <div class="relative z-10 p-4 text-white">
+            <h3 class="text-xl font-semibold">Deluxe Room</h3>
+            <p class="mt-2">Experience luxury with our Deluxe Room, featuring a king-sized bed and ocean view.</p>
+          </div>
+        </div>
+        <!-- Room 2 -->
+        <div class="relative h-64 bg-cover bg-center rounded-lg shadow-md" style="background-image: url('/images/2.jpg');">
+          <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+          <div class="relative z-10 p-4 text-white">
+            <h3 class="text-xl font-semibold">Standard Room</h3>
+            <p class="mt-2">Comfortable and affordable, our Standard Room is perfect for budget-conscious travelers.</p>
+          </div>
+        </div>
+        <!-- Room 3 -->
+        <div class="relative h-64 bg-cover bg-center rounded-lg shadow-md" style="background-image: url('/images/3.jpg');">
+          <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+          <div class="relative z-10 p-4 text-white">
+            <h3 class="text-xl font-semibold">Suite</h3>
+            <p class="mt-2">Our Suite offers the ultimate in luxury, with spacious living areas and premium amenities.</p>
+          </div>
+        </div>
+        <!-- Room 4 -->
+        <div class="relative h-64 bg-cover bg-center rounded-lg shadow-md" style="background-image: url('/images/4.jpg');">
+          <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+          <div class="relative z-10 p-4 text-white">
+            <h3 class="text-xl font-semibold">Family Room</h3>
+            <p class="mt-2">Ideal for families, this room features multiple beds and ample space for everyone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
       <!-- Contact Us Section -->
       <section class="bg-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,7 +268,7 @@
         prevButton.addEventListener('click', () => showSlide(currentIndex - 1));
         nextButton.addEventListener('click', () => showSlide(currentIndex + 1));
 
-        // Auto slide every 2 seconds
+        // Auto slide every 4 seconds
         setInterval(nextSlide, 4000);
 
         showSlide(currentIndex);
